@@ -1,109 +1,245 @@
-/* Global Styles */
-* {
+ /* Basic Reset */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Header */
-  header {
-    background-color: #004aad;
-    padding: 15px 0;
-  }
-  
-  nav {
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar container */
+nav {
+    
+    height: 50px;
+    background-color: #333;
+    padding: 10px 20px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+}
+/* Navbar list */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  nav h1 {
-    color: #fff;
-    font-size: 1.8rem;
-    font-weight: 700;
-  }
-  
-  nav ul {
-    list-style: none;
+}
+
+/* Navbar items */
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Navbar links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Profile (logo) */
+.profile-logo {
+    width: 10px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+nav ul li a img{
+    width: 30px;
+}
+
+/* Flex container for navbar links */
+.nav-left {
     display: flex;
-  }
-  
-  nav ul li {
-    margin-left: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background-color: #003a7a;
-  }
-  
-  /* Hero Section with Simpler Background */
-  .hero {
-    background-image: url('https://via.placeholder.com/1500x400?text=Simpler+Background');
-    background-size: cover;
-    background-position: center;
-    background-color: #eef4fd;
-    padding: 80px 20px;
+    margin-top: -10px;
+    justify-content: flex-start;
+    
+}
+.nav-right{
+  display: flex;
+}
+.bx-user-circle{
+  width: 20px;
+  height: 30px;
+}
+/* Sticky Sidebar styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: center; */
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: 60px; /* To account for the navbar */
+    height: 500px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.sidebar img {
+    width: 100px;
+    height: 100px;
+    
+    margin-bottom: 15px; 
+    
+}
+.sidebar .img-profile{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.sidebar h3, .sidebar p {
     text-align: center;
-    color: #004aad;
-  }
-  
-  .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #555;
-  }
-  
-  .btn-primary {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #004aad;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.army-image{
+  object-fit: fit;
+  height: 600px;
+}
+/* Edit Button styling */
+.edit-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    border: none;
     border-radius: 4px;
-    text-decoration: none;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-  }
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Main content styling */
+.main-content {
+    margin: 10px;
+    border: 2px solid black;
+    /* flex: 1; */
+    padding: 20px;
+    width: 80vw;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.f-container{
+  width: 800px;
+  height: 800px;
+}
+.form-popup1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  display: none;
   
-  .btn-primary:hover {
-    background-color: #003a7a;
-  }
+}
+.form-popup1.active{
+  display: flex;
+}
+.form-popup2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  display: none;
+}
+.form-popup2.active{
+  display: flex;
+}
+/* Form container styles */
+.form-container {
+  width: 400px;
+  max-height: 700px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap:10px;
   
-  /* Footer */
-  footer {
-    background-color: #004aad;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  footer p {
-    font-size: 0.9rem;
-  }
-  
+}
+
+/* Form header styles */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input field styles */
+.form-container input[type=text],
+.form-container input[type=email],
+.form-container input[type=password] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Button styles */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+/* Cancel button styles */
+.form-container .cancel {
+  background-color: #ff4d4d;
+}
+
+/* Button hover effect */
+.form-container .btn:hover {
+  opacity: 1;
+}
